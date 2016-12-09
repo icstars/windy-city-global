@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="../js/trains.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/trains.css">
+  </head>
+  <body>
+    <div class="content">
+        <h3> Trains </h3>
+        <table id="trainTable" class="table">
+          <thead>
+              <td>Train Number</td>
+              <td>Color</td>
+              <td>InService?</td>
+              <td></td>
+          </thead>
+          <tbody id="trainData"></tbody>
+        </table>
+        <form class="form-inline">
+          <div class="input-group">
+            <input id="trainNumber" placeholder="Train Number" type="number"></input>
+            <input id="trainColor" placeholder="Color" type="text"></input>
+            <span>In Service? </span>
+            <input type="radio" name="inService" value="true"> True </input>
+            <input type="radio" name="inService"  value="false"> False </input>
+            <button id="addATrain" class="btn btn-primary btn-sm">Add a train</button>
+          </div>
+        </form>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "c37",
+  "version": "1.0.0",
+  "description": "Seed project for cycle 37",
+  "main": "app.js",
+  "scripts": {
+    "start" : "node backend/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icstars/c37.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icstars/c37/issues"
+  },
+  "homepage": "https://github.com/icstars/c37#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "lodash": "^4.6.1",
+    "pg": "^4.4.4"
+  }
+}
