@@ -9,6 +9,10 @@ module.exports = function() {
     return res.render('helloworld.html');
   });
 
+router.get('/Tania', function(req,res){
+    return res.render('Tania.html');
+  });
+
   router.get('/trains', function(req,res){
     return res.render('trains.html');
   });
@@ -20,6 +24,8 @@ module.exports = function() {
   });
 
   /* Your code here */
-
+/*router.post('/trains/date', function,(req, res){
+  dcatabase.executeQuery("insert into trains (trainnumber, lineColor, inservice")
+}*/
   return router
 }();
