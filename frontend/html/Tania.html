@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <meta name="viewport" content="width=device-width, initial scale=1">
    	<style type="text/css">
+   	
+   	
 	*{
 	margin: 0;
 	padding: 0;
@@ -21,7 +23,7 @@ body{
 }
 
 .sbutton{
-	width: 500px;
+	width: 400px;
 	background-color: rgba(1,1,20,0.5);
 	margin: 1px auto;
 	border-radius: 50px;
@@ -35,15 +37,20 @@ body{
 
 .settings{
 	width: 100%;
-	padding-top: 25px;
+	padding-top: 0px;
 	font-size: 30px;
 	color: #fff;
 	text-align: center;
 	text-shadow: 1px 1px 1px #000;
 	margin-bottom: 15px;
+	margin-top: 150px;
 }
+
+/*.S-page{
+	position: center;*/
+
 .log-out{
-width: 500px;
+width: 400px;
 	background-color: rgba(1,1,20,0.5);
 	margin: 1px auto;
 	border-radius: 50px;
@@ -59,10 +66,19 @@ div{
 	text-align: center;
 }
    </style>
+   
+   
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+   
 </head>
 <body>
     
-    <div class="Settings">
+    <div class="S-page">
 		<div class="settings">Settings</div>
 				<button type="button" class="sbutton">Notifications</button><br>
 				<button type="button" class="sbutton">Sounds</button><br>
@@ -75,6 +91,17 @@ div{
 				<br>
 			</form>
 	</div>
+	
+	
+	<div class="S-page">
+  <h2>Button Tags</h2>
+  <a href="https://preview.c9users.io/taniaolivares/windy-city-global/frontend/html/notifications.html?_c9_id=livepreview20&_c9_host=https://ide.c9.io" class="btn btn-info" role="button">Link Button</a>
+  <button type="button" class="sbutton">Notifications</button>
+  <input type="button" class="btn btn-info" value="Input Button">
+  <input type="submit" class="btn btn-info" value="Submit Button">
+</div>
+	
+	
 </body>
 </html>
 
