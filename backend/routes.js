@@ -18,9 +18,7 @@ router.get('/notifications', function(req,res){
     return res.render('notifications.html');
   });
   
-  router.get('/Settings', function(req,res){
-    return res.render('Settings.html');
-  });
+
 
   router.get('/trains', function(req,res){
     return res.render('trains.html');
