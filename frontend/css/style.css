@@ -7,11 +7,11 @@ ul,li{
     list-style: none;
 }
 .view-content{
-    background: #f5f5f5;
+   
 }
 
 body{
-    background: url(https://images.vexels.com/media/users/11020/70625/raw/238a2635db2edd3d9bbe66a7d8015888-futuristic-fluorescent-blue-tech-lines-background.jpg);
+    background: url(https://all4desktop.com/data_images/1920%20x%201200/4195747-windows-vista-original-logon.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -19,25 +19,41 @@ body{
 }
 
 #admin-view .view-content p{
-    height: 22px;
-    padding: 10px;
-    text-align: left;
-    background: #f5f5f5;
-    color: #999;
-    font-size: 14px
+    height: 30px;
+    padding: 30px;
+    text-align: center;
+    
+    color: #ffffff;
+    
+    
+    font-size: 30px;
+    
 }
 
 #admin-view .view-content li{
-    padding: 0 15px;
-    height: 44px;
-    border-bottom: 1px solid #e6eaef;
-    background: #fff
+    
+    height: 50px;
+    
+    width: 400px;
+	background-color: rgba(1,1,20,0.5);
+	margin: 1px auto;
+	border-radius: 50px;
+	border: 5px solid #8FD9F7;
+	box-shadow: 0 0 20px 5px #000;
+	padding:0;
+	font-size: 25px;
+	color:white;
+	
+    
+    
+    
 }
 
 #admin-view .plus-desc{
     float: left;
     height: 45px;
     text-align: left
+    
 }
 
 #admin-view .plus-desc h2{
@@ -45,10 +61,14 @@ body{
     height: 45px;
     line-height: 45px;
     padding-left: 24px;
-    font-size: 15px;
+    font-size: 28px;
     font-weight: normal;
-    color: #333;
+    color: #ffffff;
+    
     display: inline-block
+    
+    
+    
 }
 
 #admin-view .slide, #tabsetting_view .slide {
@@ -80,4 +100,10 @@ body{
 #admin-view .slide.on:after, #tabsetting_view .slide.on:after {
     left: 22px;
     -webkit-box-shadow: 0 0 0 0 #38f
+}
+
+.acc {
+    text-align: center;
+    padding-top: 50px;
+    
 }
