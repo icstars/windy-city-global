@@ -9,14 +9,18 @@ module.exports = function() {
     return res.render('helloworld.html');
   });
 
-router.get('/Tania', function(req,res){
-    return res.render('Tania.html');
-  });
-
   router.get('/trains', function(req,res){
     return res.render('trains.html');
   });
 
+  router.get('/Tania', function(req,res){
+    return res.render('trains.html');
+  });
+  
+    router.get('/julian', function(req,res){
+    return res.render('julian.html');
+  });
+  
   router.get('/trains/data', function(req,res){
     database.executeQuery("SELECT * FROM trains", function(results) {
       res.send(results);
@@ -24,8 +28,6 @@ router.get('/Tania', function(req,res){
   });
 
   /* Your code here */
-/*router.post('/trains/date', function,(req, res){
-  dcatabase.executeQuery("insert into trains (trainnumber, lineColor, inservice")
-}*/
+
   return router
 }();
