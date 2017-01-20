@@ -1,0 +1,20 @@
+.btn-group-vertical{
+    position: absolute;
+   margin: auto;
+    width: 100%;
+
+    
+}
+
+h1{
+    text-align: center;
+    color: red;
+}
+
+body {
+background: url(https://all4desktop.com/data_images/1920%20x%201200/4195747-windows-vista-original-logon.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+}

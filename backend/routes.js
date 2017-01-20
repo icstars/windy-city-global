@@ -9,6 +9,22 @@ module.exports = function() {
     return res.render('helloworld.html');
   });
 
+<<<<<<< HEAD
+=======
+router.get('/Tania', function(req,res){
+    return res.render('Tania.html');
+  });
+
+
+router.get('/notifications', function(req,res){
+    return res.render('notifications.html');
+  });
+  
+router.get('/Settings', function(req,res){
+    return res.render('Settings.html');
+  });
+
+>>>>>>> 0b7c4e09126e697515cd4fd75369a66b5f06c46a
   router.get('/trains', function(req,res){
     return res.render('trains.html');
   });
