@@ -1,0 +1,208 @@
+<Doctype html>
+  <head>
+    <meta charset="utf-8">
+ <
+    <title>Explore Challenges</title>
+
+  </head>
+  <style>
+  html {
+     background-image: url(https://all4desktop.com/data_images/1920%20x%201200/4195747-windows-vista-original-logon.jpg);
+   }
+
+   #chart {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+
+h1{
+color:white;
+}
+ #content   {
+  width: 500px;
+  background-color: rgba(1,1,20,0.5);
+  margin: 150px auto;
+  border-radius: 50px;
+  border: 20px ridge #00bfff;
+  box-shadow: 0 0 20px 5px #000;
+  padding:0;
+  position: relative; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+  </style>
+  <body>
+  <div id=content>
+    <h1>Explore Challenges</h1>
+
+<div id='chart' style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Challenge Name</th>
+          <th>Location</th>
+          <th>Badges</th>
+          <th>Reward</th>
+          <th>Participants</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <input type="datetime-local"></td>
+          <td><input type='text'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+        </tr>
+        <tr>
+          <td> <input type="datetime-local"></td>
+          <td><input type='text'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+        </tr>
+         <tr>
+          <td> <input type="datetime-local"></td>
+          <td><input type='text'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+        </tr>
+         <tr>
+          <td> <input type="datetime-local"></td>
+          <td><input type='text'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+        </tr>
+         <tr>
+          <td> <input type="datetime-local"></td>
+          <td><input type='text'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+        </tr>
+         <tr>
+          <td> <input type="datetime-local"></td>
+          <td><input type='text'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+        </tr>
+         <tr>
+          <td> <input type="datetime-local"></td>
+          <td><input type='text'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+          <td><input type='text'></td>
+          <td><input type='number'></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="jquery.table-filter.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $("table").addTableFilter();
+      });
+
+      (function ($) {
+  "use strict";
+
+
+  $.fn.addTableFilter = function (options) {
+    var o = $.extend({}, $.fn.addTableFilter.defaults, options),
+      tgt,
+      id,
+      label,
+      input;
+
+    if (this.is("table")) {
+      // Generate ID
+      if (!this.attr("id")) {
+        this.attr({
+          id: "t-" + Math.floor(Math.random() * 99999999)
+        });
+      }
+      tgt = this.attr("id");
+      id = tgt + "-filtering";
+
+      // Build filtering form
+      label = $("<label/>").attr({
+        "for": id
+      }).append(o.labelText);
+      input = $("<input type=\"search\"/>").attr({
+        id:   id,
+        size: o.size
+      }).on('click', function () {
+        $(this).keyup();
+      });
+      $("<p/>").addClass("formTableFilter").append(label).append(input).insertBefore(this);
+
+      // Bind filtering function
+      $("#" + id).delayBind("keyup", function (e) {
+        var words = $(this).val().toLowerCase().split(" ");
+        $("#" + tgt + " tbody tr").each(function () {
+          var s = $(this).html().toLowerCase().replace(/<.+?>/g, "").replace(/\s+/g, " "),
+            state = 0;
+          $.each(words, function () {
+            if (s.indexOf(this) < 0) {
+              state = 1;
+              return false; // break $.each()
+            }
+          });
+
+          if (state) {
+            $(this).hide();
+          } else {
+            $(this).show();
+          }
+        });
+      }, 300);
+    }
+
+    return this;
+  };
+
+  $.fn.addTableFilter.defaults = {
+    labelText: "Search: ",
+    size:      32
+  };
+
+  $.fn.delayBind = function (type, data, func, timeout) {
+    if ($.isFunction(data)) {
+      timeout = func;
+      func    = data;
+      data    = undefined;
+    }
+
+    var self  = this,
+      wait    = null,
+      handler = function (e) {
+        clearTimeout(wait);
+        wait = setTimeout(function () {
+          func.apply(self, [$.extend({}, e)]);
+        }, timeout);
+      };
+
+    return this.bind(type, data, handler);
+  };
+}(jQuery));
+    </script>
+  </body>
+</html>

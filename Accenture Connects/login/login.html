@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial scale=1">
+	<style type="text/css">
+	*{
+	margin: 0;
+	padding: 0;
+	font-family: arial, "helvetica Neue", helvetica, sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	background: url(https://all4desktop.com/data_images/1920%20x%201200/4195747-windows-vista-original-logon.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.login-box{
+	width: 500px;
+	background-color: rgba(1,1,20,0.5);
+	margin: 150px auto;
+	border-radius: 50px;
+	border: 20px ridge #00bfff;
+	box-shadow: 0 0 20px 5px #000;
+	padding:0;
+	position: relative; 
+  	left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.info{
+	width: 100%;
+	padding-top: 25px;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+	text-shadow: 1px 1px 1px #000;
+	margin-bottom: -5px;
+}
+
+.form-box{
+	padding: 20px;
+}
+
+.inp {
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+	border-radius: 100px;
+	margin-bottom: 3px;
+	border: none;
+	font-size: 20px;
+	border-bottom: 2px solid #000;
+	color: #000;
+}
+
+.inp:focus{
+	outline: none;
+	border-bottom: 5px solid #dc143c;
+	color: #000;
+}
+
+.sub-btn{
+	width: 100%;
+	padding: 10px;
+	border-radius: 100px;
+	border:none;
+	font-size: 20px;
+	background: linear-gradient(#00bfff,navy);
+	cursor: pointer;
+	color:#fff;
+	border-bottom: 2px solid #000;
+	text-shadow: 1px 1px 1px #000;
+	margin-top: 5px;
+	margin-bottom: -18px;
+}
+
+.sub-btn:hover{
+	background: linear-gradient(#dc143c, #8b0000);
+}
+
+.sub-btn:focus{
+	outline: none;
+}
+
+.rem{
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 20px;
+	height: 20px;
+	float: left;
+}
+
+.remember{
+	float: left;
+}	
+
+span{
+	color: white;
+	margin-left: 10px;
+	margin-top: 10px;
+	position: relative;
+	text-shadow: 1px 1px 1px #000;
+	float: left;
+}
+
+a{
+	color: #00bfff;
+	text-decoration: none;
+}
+
+.f-pass{
+	margin-top: 10px;
+	text-shadow: 1px 1px 1px #000;
+	float: right;
+}
+
+@media (max-width: 550px) {
+	.login-box{
+		width: 90%;
+		border: 20px ridge #00bfff;
+	}
+}
+
+@media (max-height: 550px) {
+	.login-box{
+		height: 90%;
+		border: 20px ridge #00bfff;
+	}
+}
+
+	</style>
+	<title>Accenture Connects</title>
+</head>
+<body>
+	<div class="login-box">
+		<div class="info">Accenture Connects</div>
+			<form action="#" method="post" class="form-box">
+				<input class="inp" type="text" placeholder="Username"><br>
+				<input style="display: block;" class="inp" type="password" placeholder="Password">
+				<input type="checkbox" name="rem" class="rem">
+				<span class="remember">Remember me</span>
+				<a href="#" class="f-pass">Forgot Password?</a>
+				<input style="display: block;" type="submit" name="submit" class="sub-btn" value="Login"><br>
+			</form>
+	</div>
+</body>
+</html>

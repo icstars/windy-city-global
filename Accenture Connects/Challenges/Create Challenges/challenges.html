@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Create Challenges</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+html {
+  background-image: url(https://all4desktop.com/data_images/1920%20x%201200/4195747-windows-vista-original-logon.jpg);
+
+
+background-size:cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  color: #FFFFFF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+#content {
+ width: 500px;
+  background-color: rgba(1,1,20,0.5);
+  margin: 150px auto;
+  border-radius: 50px;
+  border: 20px ridge #00bfff;
+  box-shadow: 0 0 20px 5px #000;
+  padding:0;
+  position: relative; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.back{
+    text-align: center;
+    padding-top: 49px;
+    
+}
+
+#leaderboard {
+  
+  width: 100%;
+  margin-left:auto; 
+  margin-right:auto;
+  background-color: transparent;
+
+}
+
+  #submit{
+    display: inline-block;
+    margin-left: 70%;
+  }
+
+.scoreinput {
+  width: 99%;
+}
+
+.hiddenPre {
+  background-color: inherit;
+  border: none;
+}
+
+.btn-secondary, .btn-default {
+  color: #000000;
+}
+
+#leaderboardTable {
+   border: transparent;
+  color: #000000;
+  width: 100%;
+  margin-bottom: 2px;
+  opacity: 0,0;
+  color:black;
+  font-size: 20px;
+  border:solid white;
+  
+  }
+
+#challengeDetails{
+  border:5px solid black;
+  width:100%;
+  height: 250px;
+
+}
+input {
+  color: #000000;
+}
+</style>
+</head>
+<body>
+<div id="content">
+
+  <h1>Create Challenges</h1>
+  
+  <div id="leaderboard" class="table-responsive">
+  <table id="leaderboardTable" class="table table-striped table-bordered">
+    </table>
+ 
+
+  </div>
+ 
+  <div id="addTeam"> 
+  
+    <form id="addTeamForm" 
+        
+          onSubmit="addTeamFormSubmit();return false;"
+       
+          action="#" method="GET"><br>
+    
+      <P> Challenge Name: <P>
+      <input id="newTeamName" type="text" /><br>
+
+      <input class="btn btn-primary" type="submit" value="Add" />
+    </form><br>
+
+    <label> Challenge Details </label><br>
+   
+    <div class="back"> 
+   <a href=""><img src="http://i64.tinypic.com/f1cojc_th.gif" width="50" height="50"></a>
+    <input id = "submit" type='button' value='submit challenge'><br><br><br>
+  <script>
+  var scores = {};
+
+$( document ).ready(init());
+
+
+function saveScores(){
+  $.cookie("scores", JSON.stringify(scores));
+}
+
+
+function loadScores(){
+  try {
+    var read = $.cookie("scores");
+    return JSON.parse(read);
+  } catch(err){
+    return {};
+  }
+}
+
+function updateLeaderboard(){
+  var table = $("#leaderboardTable");
+    table.html("<thead><tr><th>Date</th><th>Challenge Name</th><th>Admin Name</th><th>Silver Badges</th><th> Gold Badges<th>Reward(optional)</th><th>Local/Global</th></tr></thead>");
+
+  var pos = "<input type='date'";
+  
+  // Create items array
+  var names = Object.keys(scores).map(function(key) {
+    return [key, scores[key]];
+  });
+
+ 
+
+  // Sort the array based on the second element
+  names.sort(function(first, second) {
+    return second[1] - first[1];
+  });
+   
+
+
+
+  table.append("<tbody>");
+  
+  var idNum = 0;
+
+
+ 
+
+  for (var name in names) {
+    idNum = idNum + 1;
+	var id = "teamscore"+idNum;
+    name = names[name][0];
+
+
+    
+
+    var score = scores[name];
+    var scoreInput = "<input class='scoreinput' id='"+id+"input"+"' type='number' value='"+score+"' />";
+    var badgeInput = "<input class='scoreinput' id='"+id+"input"+"' type='number' value='"+score+"' />";
+
+
+ var blankInput = "<input type='text'";
+ var checkbox = "<input type='checkbox'>local<br><input type='checkbox'>global<br>";
+  var button ="<input type='button' value='submit challenge'" ;
+	
+    table.append("<tr><td>"+pos+"</td><td>"+name+"</td><td>"+blankInput+"</td><td>"+blankInput+"</td><td>"+blankInput+"</td><td>"+blankInput+"</td><td>"+checkbox+"</td>");
+
+    pos = pos + 1;
+	var actions = (function(n){
+		var _name = n;
+		return {
+	
+		  uscore:function(){
+		    try {
+	          var amt = parseInt($(this).val());
+			  if(isNaN(amt)){
+			    throw "Is NaN";
+			  }
+			  if(!isFinite(amt)){
+			    throw "Inifnity not allowed";
+			  }
+			  updateScore(_name, amt);updateLeaderboard();
+			} catch (e){
+			  $(this).val(scores[_name]);
+			}
+		  }
+		 
+		}
+    })(name);
+	$("#"+id+"delButton").attr('title', 'Delete')
+	$("#"+id+"input").change(actions.uscore);
+
+  }
+
+
+
+}
+
+function init(){
+  scores = loadScores();
+
+  updateLeaderboard();
+}
+
+function updateScore(team, score){
+  scores[team] = score;
+  saveScores();
+}
+
+
+
+
+function addTeamFormSubmit(){
+  var teamname = $("#newTeamName").val();
+  
+  updateScore(teamname, 0);
+  updateLeaderboard();
+  $("#newTeamName").val("");
+}
+
+
+
+</script>
+</body>
+</html>
