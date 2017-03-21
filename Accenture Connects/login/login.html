@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial scale=1">
 	<style type="text/css">
 	*{
 	margin: 0;
@@ -13,7 +12,7 @@
 }
 
 body{
-	background: url(https://all4desktop.com/data_images/1920%20x%201200/4195747-windows-vista-original-logon.jpg);
+	background: url(http://labs3.kentooz.com/simplex/wp-content/uploads/2013/04/windows-vista-wallpaper-182.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -28,11 +27,6 @@ body{
 	border: 20px ridge #00bfff;
 	box-shadow: 0 0 20px 5px #000;
 	padding:0;
-	position: relative; 
-  	left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
 }
 
 .info{
@@ -95,18 +89,13 @@ body{
 	margin-top: 10px;
 	width: 20px;
 	height: 20px;
-	float: left;
-}
-
-.remember{
-	float: left;
 }	
 
 span{
 	color: white;
 	margin-left: 10px;
 	margin-top: 10px;
-	position: relative;
+	position: absolute;
 	text-shadow: 1px 1px 1px #000;
 	float: left;
 }
@@ -117,25 +106,17 @@ a{
 }
 
 .f-pass{
+	float: right;
 	margin-top: 10px;
 	text-shadow: 1px 1px 1px #000;
-	float: right;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 725px) {
 	.login-box{
 		width: 90%;
 		border: 20px ridge #00bfff;
 	}
 }
-
-@media (max-height: 550px) {
-	.login-box{
-		height: 90%;
-		border: 20px ridge #00bfff;
-	}
-}
-
 	</style>
 	<title>Accenture Connects</title>
 </head>
@@ -145,8 +126,7 @@ a{
 			<form action="#" method="post" class="form-box">
 				<input class="inp" type="text" placeholder="Username"><br>
 				<input style="display: block;" class="inp" type="password" placeholder="Password">
-				<input type="checkbox" name="rem" class="rem">
-				<span class="remember">Remember me</span>
+				<input type="checkbox" name="rem" class="rem"><span>Remember me</span>
 				<a href="#" class="f-pass">Forgot Password?</a>
 				<input style="display: block;" type="submit" name="submit" class="sub-btn" value="Login"><br>
 			</form>
